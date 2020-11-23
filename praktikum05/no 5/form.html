@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <style>
+        .error{
+            color: red;
+            visibility: visible;
+        }
+        .sukses{
+            visibility: hidden;
+        }
+    </style>
+<body>
+<h3>ISI LAH FORM DIBAWAH INI</h3>
+    <form action="">
+        <div class="form-group">
+            <label for="nama">Nama Pelanggan:</label>
+            <input type="text" id="nama" placeholder="Nama lengkap" required maxlength="30" minlength="3">
+            <span class="sukses"></span>
+        </div><br>
+        <div class="form-group">
+            <label for="email">Email Pelanggan:</label>
+            <input type="email" id="email" placeholder="Email Aktif" required minlength="8">
+            <span class="sukses"></span>
+        </div><br>
+        <div class="form-group">
+            <label for="jam">Jam Keberangkatan:</label>
+            <input type="time" id="jam" min="00:00" max="23:59" required>
+            <span class="sukses"></span>
+        </div><br>
+        <div class="form-group">
+            <label for="tujuan">Tujuan Keberangkatan:<abbr title="This field is mandatory" aria-label="required"></abbr></label>
+            <input type="text" id="tujuan" list="l1" required
+            pattern="[Ii]ndonesia|[Bb]elanda|[Ii]talia|[Jj]epang|[Tt]urki|[Bb]razil|[Aa]merika Serikat|[Mm]alaysia">
+            <datalist id="l1">
+                <option>Indonesia</option>
+                <option>Belanda</option>
+                <option>Italia</option>
+                <option>Jepang</option>
+                <option>Turki</option>
+                <option>Brazil</option>
+                <option>Amerika Serikat</option>
+                <option>Malaysia</option>
+            </datalist>
+            <span class="sukses"></span>
+        </div><br>
+        <div class="form-group">
+            <label for="Jumlah">Jumlah Tiket: </label>
+            <input type="text" id="tiket">
+            <span class="sukses"></span>
+        </div><br>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <div id="hasil">
+    </div>
+
+    <script src="validation.js"></script>
+</body>
+</head>
+</html>

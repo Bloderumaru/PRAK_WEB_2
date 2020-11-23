@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <style>
+        select, img {
+            width: 250px;
+            height: auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Picker</title>
+</head>
+
+<body>
+<h2>Pilihlah Hewan</h2>
+    <select id="changeImage" onchange="change_image()">
+        <option disabled selected>Pilihlah Hewan</option>
+        <option value="anjing" >Anjing</option>
+        <option value="kucing">Kucing</option>
+        <option value="kelinci">Kelici</option>
+        <option value="elang">Elang</option>
+        <option value="hiu">Hiu</option>
+    </select>
+    <br/>
+    <br/>
+    <img id="gambar" src="" alt="Pilih Hewan diatas untuk menampilkan gambar!" width="100px" height="auto">
+    <script>
+        function change_image() {
+            let images = document.getElementById("changeImage").value;
+            let gambar = document.getElementById("gambar");
+            if (images == "anjing"){
+                gambar.src="./image/anjing.jpg";
+                alert(`Ini adalah foto Anjing ${images}`);
+            }else if (images == "kucing"){
+                gambar.src="./image/kucing.jpg";
+                alert(`Ini adalah foto Kucing ${images}`);
+            }else if (images == "kelinci"){
+                gambar.src="./image/kelinci.jpg";
+                alert(`Ini adalah foto Kelinci ${images}`);
+            }else if (images == "elang"){
+                gambar.src="./image/elang.jpg";
+                alert(`Ini adalah foto Elang ${images}`);
+            }else if (images == "hiu"){
+                gambar.src="./image/hiu.jpg";
+                alert(`Ini adalah foto Hiu ${images}`);
+            }
+        }
+    </script>
+</body>
+
+</html>
